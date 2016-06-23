@@ -1,20 +1,12 @@
 require.config({
     paths: {
         'angular': '../lib/angular/angular.min',
-        'angular-route': '../lib/angular/angular-route.min'
+        'angular-route': '../lib/angular/angular-route.min',
+        'amd': '../lib/amd/angularAMD.min'
     },
     shim: {
-        'angular-route': {
-            deps: ['angular']
-        },
-        'angular': {
-            exports: 'angular'
-        }
-    }
-});
-
-require(['angular', 'app'], function (angular) {
-    angular.element(document).ready(function () {
-        angular.bootstrap(document, ['app']);
-    });
+        'amd': ['angular'],
+        'angular-route': ['angular']
+    },
+    deps: ['app']
 });
