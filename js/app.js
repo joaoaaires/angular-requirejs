@@ -4,8 +4,8 @@ define(['angular', 'angular-route'], function (angular) {
     var app = angular.module('app', ['ngRoute']);
     app.config(function ($routeProvider) {
         $routeProvider
-                .when('/login', {template: "/views/home/login.html", controller: 'LoginController'})
-                .when('/', {template: "/home"})
+                .when('/login', {templateUrl: "views/home.html", controller: 'login'})
+                .when('/', {templateUrl: "views/home.html"})
                 .otherwise({redirectTo: '/login'});
     });
     return app;
